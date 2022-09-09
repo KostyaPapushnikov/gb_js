@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Homework</title>
 </head>
+
 <body>
-<!--
+  <!--
 Обязательное задание.
 
 Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
@@ -29,10 +31,77 @@ Infinity делать не нужно, однако, в случае если б
 
 Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
 -->
-<script>
-  "use strict";
+  <script>
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
-</script>
+    /**
+       * Функция суммирует a и b
+       * @param {number} a, b - числа которые суммируются
+       * @returns {number} - результат сложения
+      */
+    function sum(a, b) {
+      return a + b;
+    }
+
+    /**
+     * Функция из a вычитает b или наоборот
+     * @param {number} a, b - числа которые вычитаются
+     * @returns {number} - результат вычитания
+    */
+    function difference(a, b) {
+      if (a > b) {
+        return a - b;
+      } else {
+        return b - a;
+      }
+    }
+
+    /**
+     * Функция умножает a на b
+     * @param {number} a, b - числа которые умножеются
+     * @returns {number} - результат умножения
+    */
+    function multiplication(a, b) {
+      return a * b;
+    }
+
+    /**
+     * Функция делит a на b
+     * @param {number} a, b - числа которые делятся
+     * @returns {number} - результат деления
+    */
+    function division(a, b) {
+      return a / b;
+    }
+
+
+    /***
+     * Функция принимает 3 аргумента и по 3му ищет подходящий case, а после 
+      передаёт аргументы в подходящую функцию 
+     * @param {number, string} arg1, arg2, operation - 
+      arg1 - первое число.
+      arg2 - второе число.
+      operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+     * @returns {number} - результат выполнения одной из функций
+     */
+    function mathOperation(arg1, arg2, operation) {
+      switch (operation) {
+        case '+':
+          return sum(arg1, arg2);
+        case '-':
+          return difference(arg1, arg2);
+        case '*':
+          return multiplication(arg1, arg2);
+        case '/':
+          return division(arg1, arg2);
+      }
+    }
+
+    console.log(mathOperation(20, 5, '+'));
+    console.log(mathOperation(20, 5, '-'));
+    console.log(mathOperation(20, 5, '*'));
+    console.log(mathOperation(20, 5, '/'));
+  </script>
 </body>
+
 </html>
